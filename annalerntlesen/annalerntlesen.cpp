@@ -3,11 +3,49 @@
 
 #include <iostream>
 
+using namespace std;
+
+int worte_an_tag_x(const int& tag);
+int tag_bei_worte(const int& searchworte);
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    int tage = 16;
+    int worte = 4;
+    cout << "Es werden von Anna " << worte_an_tag_x(tage) << " Worte gelesen an Tag " << tage << "." << endl;
+    cout << "Es dauert " << tag_bei_worte(worte) << " Tage bis Anna " << worte << " Woerter liest" << endl;
 }
 
+int worte_an_tag_x(const int& tag)
+{
+    int worte = 1;
+    for (int i = 1, j = 0; i < tag; i++)
+    {
+        j++;
+        if (j == worte)
+        {
+            worte++;
+            j = 0;
+        }
+    }
+    return worte;
+}
+
+int tag_bei_worte(const int& searchworte)
+{
+    int worte = 1;
+    int i = 1, j = 0;
+    for (i = 1, j = 0; worte < searchworte; i++)
+    {
+        j++;
+        if (j == worte)
+        {
+            worte++;
+            j = 0;
+        }
+    }
+    return i;
+}
 // Programm ausführen: STRG+F5 oder Menüeintrag "Debuggen" > "Starten ohne Debuggen starten"
 // Programm debuggen: F5 oder "Debuggen" > Menü "Debuggen starten"
 
